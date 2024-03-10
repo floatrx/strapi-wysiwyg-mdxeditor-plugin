@@ -49,3 +49,7 @@
 .mdxeditor::-webkit-scrollbar-thumb:hover {
   background: hsla(var(--background), 100%);
 }
+
+.mdxeditor table td {
+  vertical-align: middle;
+}

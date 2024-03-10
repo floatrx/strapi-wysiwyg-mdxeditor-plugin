@@ -379,12 +379,11 @@
 
 .prose :where(table) {
   width: 100%;
-  table-layout: auto;
   text-align: left;
   margin-top: 2em;
   margin-bottom: 2em;
   font-size: .875em;
-  line-height: 1.7142857
+  line-height: 1.7142857;
 }
 
 .prose :where(thead) {
@@ -410,18 +409,12 @@
   border-bottom-width: 0
 }
 
-.prose :where(tbody td) {
-  vertical-align: baseline
-}
 
 .prose :where(tfoot) {
   border-top-width: 1px;
   border-top-color: var(--tw-prose-th-borders)
 }
 
-.prose :where(tfoot td) {
-  vertical-align: top
-}
 
 .prose :where(figure>*) {
   margin-top: 0;
