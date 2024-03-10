@@ -1,0 +1,28 @@
+/**
+ *
+ * This component is the skeleton around the actual pages, and should only
+ * contain code that should be seen on all pages. (e.g. navigation bar)
+ *
+ */
+
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { AnErrorOccurred } from '@strapi/helper-plugin';
+import pluginId from '../../pluginId';
+import HomePage from '../HomePage';
+import { getStrapiTheme } from '../../utils/getStrapiTheme';
+
+getStrapiTheme();
+
+const App = () => {
+  return (
+    <div className="prose prose-xl dark:prose-invert">
+      <Switch>
+        <Route path={`/plugins/${pluginId}`} component={HomePage} exact />
+        <Route component={AnErrorOccurred} />
+      </Switch>
+    </div>
+  );
+};
+
+export default App;

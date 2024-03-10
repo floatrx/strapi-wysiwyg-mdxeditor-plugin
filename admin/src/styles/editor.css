@@ -1,0 +1,51 @@
+/**
+ * NOTE:
+ *
+ *    This file is used variables defined by ./tailwind.prose.css
+ *    @see https://mdxeditor.dev/editor/docs/theming
+ *
+ *    Dark mode -> required body.dark modifier
+ *    @see utils/getStrapiTheme.js
+ *
+ */
+.dark .dark-editor {
+  --baseText: hsl(var(--foreground));
+  --basePageBg: hsl(var(--background));
+  --baseBg: hsl(var(--background));
+}
+
+/*
+  Override default mdxeditor styles
+*/
+.mdxeditor {
+  border: 1px solid hsl(var(--background));
+  border-radius: .5rem;
+}
+
+.mdxeditor-toolbar {
+}
+
+/* width */
+.mdxeditor::-webkit-scrollbar {
+  width: 7px;
+  box-shadow: none;
+  border: none;
+  appearance: none;
+  border-radius: 10px;
+}
+
+/* Track */
+.mdxeditor::-webkit-scrollbar-track {
+  background: hsla(var(--background), 5%);
+}
+
+/* Handle */
+.mdxeditor::-webkit-scrollbar-thumb {
+  background: hsla(var(--background), 90%);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.mdxeditor::-webkit-scrollbar-thumb:hover {
+  background: hsla(var(--background), 100%);
+}
