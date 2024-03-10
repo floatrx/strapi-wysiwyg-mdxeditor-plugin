@@ -19,17 +19,21 @@ https://mdxeditor.dev/editor/demo
 - [x] Customizable
 - [x] Keyboard shortcuts
 - [x] Plugins `editor.plugins.jsx`
+- [x] Media library (now supports only images)
 - [x] Themes
 - [x] Extensions
 - [x] Supports STRAPI media library
 
+## Todo
+
+- [ ] Youtube embed video
 
 ## Setup:
 1. Install the plugin
 ```bash
 mkdir -pv ./src/plugins/wysiwyg
 cd !$
-git clone #(this repo)
+git clone git@github.com:floatrx/strapi-wysiwyg-mdxeditor-plugin.git
 ```
 
 2. Add the following code to `config/plugins.js`
@@ -59,9 +63,15 @@ export default ({ env }) => {
           }
         }
       }
-    },
-    // ...
+    }
+    // ... other middlewares
+  ];
+};
 ```
+
+### How to render markdown on client
+
+See examples [markdown.md](./markdown.md)
 
 > [!NOTE]
 > 
