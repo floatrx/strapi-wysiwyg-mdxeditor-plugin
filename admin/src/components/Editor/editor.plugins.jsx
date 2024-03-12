@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  BlockTypeSelect,
   BoldItalicUnderlineToggles,
   codeBlockPlugin,
   codeMirrorPlugin,
@@ -12,6 +13,7 @@ import {
   imagePlugin,
   InsertTable,
   InsertThematicBreak,
+  linkDialogPlugin,
   linkPlugin,
   listsPlugin,
   ListsToggle,
@@ -24,15 +26,22 @@ import {
 } from '@mdxeditor/editor';
 
 import { MdxStrapiImageGallery } from '../MediaLib';
-import { wysiwygConfig } from '../../config';
 import { StrapiInsertVideo } from '../Video';
 
-export const getMarkdownEditorPlugins = (mode, initialValue) =>
+import { wysiwygConfig } from '../../config';
+
+/**
+ * Get the markdown editor plugins
+ * @param initialValue
+ * @returns list of MdxEditor plugins
+ */
+export const getMarkdownEditorPlugins = (initialValue) =>
   [
     listsPlugin(),
     quotePlugin(),
     headingsPlugin({ allowedHeadingLevels: [1, 2, 3, 4, 5, 6] }),
     linkPlugin(),
+    linkDialogPlugin({}),
     tablePlugin(),
     thematicBreakPlugin(),
     frontmatterPlugin(),
@@ -51,20 +60,22 @@ export const getMarkdownEditorPlugins = (mode, initialValue) =>
     }),
   ].concat(
     toolbarPlugin({
-      toolbarContents: () =>
-        mode === 'default' && (
-          <>
-            <UndoRedo />
-            <BoldItalicUnderlineToggles />
-            <CodeToggle />
-            <CreateLink />
-            <ListsToggle />
-            <InsertTable />
-            <InsertThematicBreak />
-            <MdxStrapiImageGallery />
-            <StrapiInsertVideo />
-            <DiffSourceToggleWrapper />
-          </>
-        ),
+      toolbarContents: () => {
+        const _ = wysiwygConfig.toolbar;
+        return (
+          <DiffSourceToggleWrapper>
+            {_.type && <BlockTypeSelect />}
+            {_.history && <UndoRedo />}
+            {_.style && <BoldItalicUnderlineToggles />}
+            {_.code && <CodeToggle />}
+            {_.link && <CreateLink />}
+            {_.list && <ListsToggle />}
+            {_.table && <InsertTable />}
+            {_.line && <InsertThematicBreak />}
+            {_.image && <MdxStrapiImageGallery />}
+            {_.video && <StrapiInsertVideo />}
+          </DiffSourceToggleWrapper>
+        );
+      },
     }),
   );

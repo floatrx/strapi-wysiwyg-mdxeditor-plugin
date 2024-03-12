@@ -20,7 +20,7 @@ const Editor = ({ onChange, name, value }) => {
       contentEditableClassName={`${getStrapiTheme()}-editor prose dark:prose-invert lg:prose-xl`}
       markdown={value}
       placeholder="Write your text here..."
-      plugins={getMarkdownEditorPlugins('default', value)}
+      plugins={getMarkdownEditorPlugins(value)}
     />
   );
 };

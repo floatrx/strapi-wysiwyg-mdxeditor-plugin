@@ -25,6 +25,11 @@
 .mdxeditor-toolbar {
 }
 
+/* Condensed button style */
+.mdxeditor-toolbar [aria-label="Block type"] {
+  max-width: 100px;
+}
+
 /* width */
 .mdxeditor::-webkit-scrollbar {
   width: 7px;
@@ -50,6 +55,7 @@
   background: hsla(var(--background), 100%);
 }
 
+/* Fix conflict table cells with tailwind */
 .mdxeditor table td {
   vertical-align: middle;
 }

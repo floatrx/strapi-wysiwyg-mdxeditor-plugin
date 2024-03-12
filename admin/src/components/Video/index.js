@@ -1,9 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { Box } from '@strapi/design-system/Box';
-import { Button } from '@strapi/design-system/Button';
-import { Dialog } from '@strapi/design-system/Dialog';
-import { TextInput } from '@strapi/design-system/TextInput';
-import { Typography } from '@strapi/design-system/Typography';
+import { Box, Button, Dialog, TextInput, Typography } from '@strapi/design-system';
 import { VideoIcon } from './VideoIcon';
 import { insertMarkdown$, rootEditor$, useCellValues, usePublisher } from '@mdxeditor/editor';
 import { replaceVideoLinks } from '../../utils/replaceVideoLinks';
@@ -33,10 +29,11 @@ const VideoDialog = (props) => {
 
   return (
     <Dialog isOpen title="Insert youtube/vimeo video" id="video-dialog" style={{ padding: 20 }} onClose={onClose}>
-      <Box style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 15 }}>
-        <TextInput label="URL" ref={inputRef} type="text" placeholder="insert link here..." />
+      <Box style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 25 }}>
+        <TextInput label="URL" ref={inputRef} type="text" placeholder="Insert link here..." />
       </Box>
-      <div style={{ display: 'flex', gap: 10 }}>
+      <Typography style={{ opacity: 0.5 }}>Only supports video from youtube and vimeo</Typography>
+      <div style={{ display: 'flex', gap: 10, marginTop: 10 }}>
         <Button variant="danger-light" type="button" onClick={() => onClose?.()}>
           Dismiss
         </Button>
@@ -44,7 +41,6 @@ const VideoDialog = (props) => {
           Submit
         </Button>
       </div>
-      <Typography>Only supports video from youtube and vimeo</Typography>
     </Dialog>
   );
 };
