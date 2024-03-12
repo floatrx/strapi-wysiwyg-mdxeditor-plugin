@@ -25,6 +25,7 @@ import {
 
 import { MdxStrapiImageGallery } from '../MediaLib';
 import { wysiwygConfig } from '../../config';
+import { StrapiInsertVideo } from '../Video';
 
 export const getMarkdownEditorPlugins = (mode, initialValue) =>
   [
@@ -49,26 +50,21 @@ export const getMarkdownEditorPlugins = (mode, initialValue) =>
       disableImageResize: true,
     }),
   ].concat(
-    mode === 'view'
-      ? []
-      : [
-          toolbarPlugin({
-            toolbarContents: () =>
-              mode === 'default' && (
-                <>
-                  <UndoRedo />
-                  <BoldItalicUnderlineToggles />
-                  <CodeToggle />
-                  <CreateLink />
-                  <ListsToggle />
-                  <InsertTable />
-                  <InsertThematicBreak />
-                  <MdxStrapiImageGallery />
-                  <DiffSourceToggleWrapper>
-                    <UndoRedo />
-                  </DiffSourceToggleWrapper>
-                </>
-              ),
-          }),
-        ],
+    toolbarPlugin({
+      toolbarContents: () =>
+        mode === 'default' && (
+          <>
+            <UndoRedo />
+            <BoldItalicUnderlineToggles />
+            <CodeToggle />
+            <CreateLink />
+            <ListsToggle />
+            <InsertTable />
+            <InsertThematicBreak />
+            <MdxStrapiImageGallery />
+            <StrapiInsertVideo />
+            <DiffSourceToggleWrapper />
+          </>
+        ),
+    }),
   );

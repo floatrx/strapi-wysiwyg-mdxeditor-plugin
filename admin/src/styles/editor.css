@@ -53,3 +53,19 @@
 .mdxeditor table td {
   vertical-align: middle;
 }
+
+/* Fix source editor dark theme */
+.cm-editor, .cm-gutterElement.cm-activeLineGutter {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.cm-selectionBackground, .cm-selectionMatch {
+  background: hsl(var(--selection)) !important; /*required*/
+  color: hsl(var(--foreground)) !important; /*required*/
+}
+
+.cm-gutterElement, .cm-line {
+  font-size: 1rem;
+}
+

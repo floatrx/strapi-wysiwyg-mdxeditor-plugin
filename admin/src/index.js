@@ -33,3 +33,4 @@ export default {
 };
 
 export { getStrapiTheme } from './utils/getStrapiTheme';
+export { replaceVideoLinks } from './utils/replaceVideoLinks';

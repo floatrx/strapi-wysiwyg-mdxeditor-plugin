@@ -12,6 +12,7 @@
 :root {
   --background: 210 40% 96.1;
   --foreground: 222.2 84% 4.9%;
+  --selection: 210, 100%, 50%;
   --border: 240, 13%, 88%;
 }
 
@@ -19,6 +20,7 @@
   --background: 240, 23%, 12%;
   --foreground: 210 40% 100%;
   --border: 230, 9%, 14%;
+  --selection: 240, 35%, 30%;
 }
 
 .prose {

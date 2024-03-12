@@ -26,7 +26,7 @@ https://mdxeditor.dev/editor/demo
 
 ## Todo
 
-- [ ] Youtube embed video
+- [x] Youtube & Vimeo embed video
 
 ## Setup:
 1. Install the plugin
@@ -60,6 +60,7 @@ export default ({ env }) => {
           useDefaults: true,
           directives: {
             'script-src': ["'self'", "'unsafe-eval'"],
+            'frame-src': ['youtube.com', 'www.youtube.com', 'vimeo.com', '*.vimeo.com'],
           }
         }
       }
