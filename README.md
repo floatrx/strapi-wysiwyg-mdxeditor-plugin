@@ -1,10 +1,10 @@
 # Strapi plugin wysiwyg
-This plugin is a WYSIWYG editor for Strapi. It uses the `@tiptap` editor and `@tiptap/starter-kit` to provide a rich text editor for Strapi.
 
-Allows you to replace default Strapi WYSIWYG editor with a MdxEditor.
+- This plugin is a WYSIWYG editor for Strapi. It uses the `@mdxeditor/editor` to provide a rich text editor for Strapi.
 
-![blog](./public/editor-01.png)
-![blog](./public/editor-02.png)
+- Allows you to replace default Strapi WYSIWYG editor with a MdxEditor.
+
+![blog](editor.png)
 
 ## MdxEditor:
 `Home`
@@ -74,8 +74,6 @@ export default ({ env }) => {
 ## Render markdown on client
 
 `React-markdown` + `Tailwind CSS` + `TW Typography (prose)`
-
-![blog](./public/editor-client.png)
 
 ### Example (React-markdown):
 
